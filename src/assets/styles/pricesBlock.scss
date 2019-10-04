@@ -1,0 +1,70 @@
+.pricesBlock {
+  border-radius: 13px;
+  background-color: #fff;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  padding: 25px 20px 30px 20px;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.pricesBlock-title {
+  text-align: center;
+  margin: 0 0 15px 0;
+}
+
+.pricesBlock-titleText {
+  display: block;
+  color: #e6a825;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.pricesBlock-titlePrice {
+  font-size: 16px;
+  line-height: 14px;
+  font-weight: normal;
+  color: #47b170;
+}
+
+.pricesBlock-titlePriceAmount {
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 0;
+}
+
+.pricesBlock-description {
+  margin-bottom: 25px;
+}
+
+.pricesBlock-descriptionSection {
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.pricesBlock-descriptionTitle {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  font-weight: normal;
+}
+
+.pricesBlock-descriptionTitle_inline {
+  display: inline-block;
+}
+
+.pricesBlock-descriptionPara {
+  color: #919599;
+  margin: 0;
+}
+
+.pricesBlock-orderButton {
+  display: table;
+  margin: auto;
+  width: 150px;
+}
