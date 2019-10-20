@@ -31,7 +31,7 @@
 			<div class="container">
 				<ul class="footerContacts">
 					<li class="footerContacts-item">Адрес: Київ, вул. Німанська 2</li>
-					<li class="footerContacts-item">Телефон: +38 050 12 345 67</li>
+					<li class="footerContacts-item">Телефон: <a :href=phoneHref class="footerContacts-itemLink">{{phoneLabel}}</a></li>
 				</ul>
 			</div>
 		</section>
@@ -54,6 +54,12 @@
 <script>
 	export default {
 		name: 'Footer',
+		data() {
+			return {
+				phoneLabel: '+38 067 524 79 39',
+				phoneHref: 'tel:+380675247939',
+			}
+		}
 	}
 </script>
 

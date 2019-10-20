@@ -162,3 +162,13 @@
   line-height: 20px;
   padding: 12px 10px;
 }
+
+
+@media screen and (min-width: 769px) {
+  .header {
+    background-image: url("../assets/bgr--header--wide.jpg");
+  }
+}
+
+
+

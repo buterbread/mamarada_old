@@ -1,12 +1,13 @@
+.prices {}
+
 .pricesBlock {
   border-radius: 13px;
   background-color: #fff;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
   padding: 25px 20px 30px 20px;
-
-  &:not(:last-child) {
-    margin-bottom: 30px;
-  }
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .pricesBlock-title {
@@ -24,8 +25,9 @@
 }
 
 .pricesBlock-titlePrice {
+  display: block;
   font-size: 16px;
-  line-height: 14px;
+  line-height: 18px;
   font-weight: normal;
   color: #47b170;
 }
@@ -64,7 +66,20 @@
 }
 
 .pricesBlock-orderButton {
-  display: table;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin: auto auto 0 ;
   width: 150px;
+}
+
+@media screen and (min-width: 769px) {
+  .prices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .pricesBlock {
+    width: 48%;
+  }
 }

@@ -28,6 +28,7 @@ export default {
   @import '../assets/styles/button.scss';
   @import '../assets/styles/header.scss';
   @import '../assets/styles/body.scss';
-  @import '../assets/styles/pricesBlock.scss';
+  @import '../assets/styles/home.scss';
+  @import '../assets/styles/prices';
   @import '../assets/styles/footer.scss';
 </style>

@@ -25,28 +25,28 @@
 
 				<ul class="headerMenu">
 					<li class="headerMenu-item">
-						<a href="#" class="headerMenu-link">Аниматоры для свадеб</a>
+						<a href="#nannyToGo" class="headerMenu-link">Няни на выезд</a>
 					</li>
 					<li class="headerMenu-item">
-						<a href="#" class="headerMenu-link">Няни</a>
+						<a href="#nannyForFamily" class="headerMenu-link">Подбор няни в семью</a>
 					</li>
 					<li class="headerMenu-item">
-						<a href="#" class="headerMenu-link">Домохозяйки</a>
+						<a href="#kidsWithIndividualNeeds" class="headerMenu-link">Детям с индивидуальными потребностями</a>
 					</li>
 					<li class="headerMenu-item">
-						<a href="#" class="headerMenu-link">Коррекционные педагоги</a>
+						<a href="#autoDaddy" class="headerMenu-link">Автопапа</a>
 					</li>
 					<li class="headerMenu-item">
-						<a href="#" class="headerMenu-link">Бебибоксы</a>
+						<a href="#babyBoxes" class="headerMenu-link">Бебибоксы</a>
 					</li>
 					<li class="headerMenu-item">
-						<a href="#" class="headerMenu-link">Детская косметика</a>
+						<a href="#kidsCosmetics" class="headerMenu-link">Детская косметика</a>
 					</li>
 				</ul>
 
 				<div class="header-bottom">
-					<a href="tel:+380501234567" class="headerPhone">+38 050 12 345 67</a>
-					<a href="tel:+380501234567" class="button headerCallButton">Дзвонити</a>
+					<a :href="phoneHref" class="headerPhone">{{phoneLabel}}</a>
+					<a :href="phoneHref" class="button headerCallButton">Дзвонити</a>
 				</div>
 			</div>
 		</div>
@@ -56,7 +56,12 @@
 <script>
 	export default {
 		name: 'Header',
-		props: {}
+		data() {
+			return {
+				phoneLabel: '+38 067 524 79 39',
+				phoneHref: 'tel:+380675247939',
+			}
+		}
 	}
 </script>
 
