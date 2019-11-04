@@ -15,29 +15,27 @@
 				</div>
 
 				<ul class="footerMenu">
-					<li class="footerMenu-item"><a href="#" class="footerMenu-link">Аниматоры для свадеб</a></li>
-					<li class="footerMenu-item"><a href="#" class="footerMenu-link">Няни почасово</a></li>
-					<li class="footerMenu-item"><a href="#" class="footerMenu-link">Няни на постоянку</a></li>
-					<li class="footerMenu-item"><a href="#" class="footerMenu-link">Няни с проживанием</a></li>
+					<li class="footerMenu-item"><a href="/#nannyToGo" class="footerMenu-link">{{ $t('NannyToGo') }}</a></li>
+					<li class="footerMenu-item"><a href="/#nannyForFamily" class="footerMenu-link">{{ $t('NannyForFamily') }}</a></li>
+					<li class="footerMenu-item"><a href="/#kidsWithIndividualNeeds" class="footerMenu-link">{{ $t('KidsWithIndividualNeeds') }}</a></li>
 
-					<li class="footerMenu-item"><a href="#" class="footerMenu-link">Домохозяйки</a></li>
-					<li class="footerMenu-item"><a href="#" class="footerMenu-link">Коррекционные педагоги</a></li>
-					<li class="footerMenu-item"><a href="#" class="footerMenu-link">Бебибоксы</a></li>
-					<li class="footerMenu-item"><a href="#" class="footerMenu-link">Детская косметика</a></li>
+					<li class="footerMenu-item"><a href="/#autoDaddy" class="footerMenu-link">{{ $t('AutoDaddy') }}</a></li>
+					<li class="footerMenu-item"><a href="/#babyBoxes" class="footerMenu-link">{{ $t('BabyBoxes') }}</a></li>
+					<li class="footerMenu-item"><a href="/#kidsCosmetics" class="footerMenu-link">{{ $t('KidsCosmetics') }}</a></li>
 				</ul>
 			</div>
 		</section>
 		<section class="footerSection">
 			<div class="container">
 				<ul class="footerContacts">
-					<li class="footerContacts-item">Адрес: Київ, вул. Німанська 2</li>
-					<li class="footerContacts-item">Телефон: <a :href=phoneHref class="footerContacts-itemLink">{{phoneLabel}}</a></li>
+					<li class="footerContacts-item">{{ $t('Address') }} {{ $t('AddressLine') }}</li>
+					<li class="footerContacts-item">{{ $t('Phone') }} <a :href=phoneNumber class="footerContacts-itemLink">{{phoneLabel}}</a></li>
 				</ul>
 			</div>
 		</section>
 		<section class="footerSection">
 			<div class="container">
-				<ul class="footerLinks">
+				<ul v-if="false" class="footerLinks">
 					<li class="footerLinks-item">
 						<a href="#" class="footerLinks-link">Умови роботи сервісу</a>
 					</li>
@@ -52,12 +50,16 @@
 </template>
 
 <script>
+	import contact from '../config/contact';
+	const { phones } = contact;
+	const { phoneLabel, phoneNumber } = phones[0] || {};
+
 	export default {
 		name: 'Footer',
 		data() {
 			return {
-				phoneLabel: '+38 067 524 79 39',
-				phoneHref: 'tel:+380675247939',
+				phoneLabel,
+				phoneNumber,
 			}
 		}
 	}

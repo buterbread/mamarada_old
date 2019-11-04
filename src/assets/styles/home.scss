@@ -1,10 +1,21 @@
-.homeSection {}
+.homeSection {
+  padding: 35px 0 30px 0;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.homeSection--accented {
+  background-color: #ffffff;
+}
 
 .homeSection-title {
   text-align: center;
   color: #47b170;
   font-size: 24px;
-  margin: 0 0 10px 0;
+  font-weight: normal;
+  margin: 0 0 20px 0;
 }
 
 .termsOfService {

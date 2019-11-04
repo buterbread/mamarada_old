@@ -120,6 +120,7 @@
   display: block;
   color: #ffee33;
   font-family: 'Comfortaa';
+  font-size: 16px;
   line-height: 18px;
   padding: 13px 10px;
   text-decoration: none;
@@ -163,6 +164,12 @@
   padding: 12px 10px;
 }
 
+.header--inner {
+  .headerWrapper {
+    height: auto;
+    min-height: 0;
+  }
+}
 
 @media screen and (min-width: 769px) {
   .header {

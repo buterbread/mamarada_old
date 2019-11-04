@@ -5,48 +5,56 @@
 				<div class="header-top">
 					<a href="/" class="headerLogo">Мама Рада :)</a>
 
-					<ul class="mediaLinks mediaLinks_header">
-						<li class="mediaLinks-item">
-							<a href="#" class="mediaLinks-link"><i class="icon icon-instagram"></i>Instagram</a>
-						</li>
-						<li class="mediaLinks-item">
-							<a href="#" class="mediaLinks-link"><i class="icon icon-facebook"></i>Facebook</a>
-						</li>
-					</ul>
+					<div>
+						<a href="#" v-on:click="(e) => changeLang(e, 'ua')">укр</a>
+						&nbsp;&nbsp;&nbsp;
+						<a href="#" v-on:click="(e) => changeLang(e, 'ru')">рус</a>
+					</div>
 
-					<a href="#" class="sandwichMenu">
-						<i class="sandwichMenu-bar"></i>
-						<i class="sandwichMenu-bar"></i>
-						<i class="sandwichMenu-bar"></i>
-					</a>
+					<template v-if="false">
+						<ul class="mediaLinks mediaLinks_header">
+							<li class="mediaLinks-item">
+								<a href="#" class="mediaLinks-link"><i class="icon icon-instagram"></i>Instagram</a>
+							</li>
+							<li class="mediaLinks-item">
+								<a href="#" class="mediaLinks-link"><i class="icon icon-facebook"></i>Facebook</a>
+							</li>
+						</ul>
+
+						<a href="#" class="sandwichMenu">
+							<i class="sandwichMenu-bar"></i>
+							<i class="sandwichMenu-bar"></i>
+							<i class="sandwichMenu-bar"></i>
+						</a>
+					</template>
 				</div>
 
-				<h1 class="headerTitle">Обученные и проверенные няни и домохозяйки</h1>
+				<h1 class="headerTitle">{{ $t('Slogan') }}</h1>
 
 				<ul class="headerMenu">
 					<li class="headerMenu-item">
-						<a href="#nannyToGo" class="headerMenu-link">Няни на выезд</a>
+						<a href="#nannyToGo" class="headerMenu-link">{{ $t('NannyToGo') }}</a>
 					</li>
 					<li class="headerMenu-item">
-						<a href="#nannyForFamily" class="headerMenu-link">Подбор няни в семью</a>
+						<a href="#nannyForFamily" class="headerMenu-link">{{ $t('NannyForFamily') }}</a>
 					</li>
 					<li class="headerMenu-item">
-						<a href="#kidsWithIndividualNeeds" class="headerMenu-link">Детям с индивидуальными потребностями</a>
+						<a href="#kidsWithIndividualNeeds" class="headerMenu-link">{{ $t('KidsWithIndividualNeeds') }}</a>
 					</li>
 					<li class="headerMenu-item">
-						<a href="#autoDaddy" class="headerMenu-link">Автопапа</a>
+						<a href="#autoDaddy" class="headerMenu-link">{{ $t('AutoDaddy') }}</a>
+					</li>
+					<li v-if="false" class="headerMenu-item">
+						<a href="#babyBoxes" class="headerMenu-link">{{ $t('BabyBoxes') }}</a>
 					</li>
 					<li class="headerMenu-item">
-						<a href="#babyBoxes" class="headerMenu-link">Бебибоксы</a>
-					</li>
-					<li class="headerMenu-item">
-						<a href="#kidsCosmetics" class="headerMenu-link">Детская косметика</a>
+						<a href="#kidsCosmetics" class="headerMenu-link">{{ $t('KidsCosmetics') }}</a>
 					</li>
 				</ul>
 
 				<div class="header-bottom">
-					<a :href="phoneHref" class="headerPhone">{{phoneLabel}}</a>
-					<a :href="phoneHref" class="button headerCallButton">Дзвонити</a>
+					<a :href="`tel:${phoneNumber}`" class="headerPhone">{{phoneLabel}}</a>
+					<a :href="`tel:${phoneNumber}`" class="button headerCallButton">{{ $t('ToCall') }}</a>
 				</div>
 			</div>
 		</div>
@@ -54,12 +62,23 @@
 </template>
 
 <script>
+	import contact from '../config/contact';
+	const { phones } = contact;
+	const { phoneLabel, phoneNumber } = phones[0] || {};
+
 	export default {
 		name: 'Header',
+		methods: {
+			changeLang(e, locale) {
+				e.preventDefault();
+				this.$i18n.locale = locale;
+				this.$store.dispatch('languages/setLanguage', locale);
+			}
+		},
 		data() {
 			return {
-				phoneLabel: '+38 067 524 79 39',
-				phoneHref: 'tel:+380675247939',
+				phoneLabel,
+				phoneNumber,
 			}
 		}
 	}
