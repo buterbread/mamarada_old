@@ -72,7 +72,7 @@
 			changeLang(e, locale) {
 				e.preventDefault();
 				this.$i18n.locale = locale;
-				this.$store.dispatch('languages/setLanguage', locale);
+				this.$store.dispatch('locales/setLocale', locale);
 			}
 		},
 		data() {

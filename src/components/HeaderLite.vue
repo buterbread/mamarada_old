@@ -5,6 +5,12 @@
 				<div class="header-top">
 					<a href="/" class="headerLogo">Мама Рада :)</a>
 
+					<div>
+						<a href="#" v-on:click="(e) => changeLang(e, 'ua')">укр</a>
+						&nbsp;&nbsp;&nbsp;
+						<a href="#" v-on:click="(e) => changeLang(e, 'ru')">рус</a>
+					</div>
+
 					<template v-if="false">
 						<ul class="mediaLinks mediaLinks_header">
 							<li class="mediaLinks-item">
@@ -30,6 +36,13 @@
 <script>
 	export default {
 		name: 'HeaderLite',
+		methods: {
+			changeLang(e, locale) {
+				e.preventDefault();
+				this.$i18n.locale = locale;
+				this.$store.dispatch('locales/setLocale', locale);
+			}
+		},
 		data() {
 			return {}
 		}

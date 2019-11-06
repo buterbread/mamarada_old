@@ -6,7 +6,7 @@ export default {
   state: {
     loading: false,
     list: [],
-    item: {},
+    item: null,
     errors: [],
     timestamp: null,
   },

@@ -3,11 +3,11 @@
     <Header />
     <div class="body">
       <div class="container">
-        <div class="details">
-          <h1 class="details-title">{{ cosmeticsItem.title }}</h1>
-          <h2 class="details-line">{{ cosmeticsItem.details.productLine }}</h2>
-          <img :src="cosmeticsItem.itemUrl" :alt="cosmeticsItem.title" class="details-image" width="335" height="335">
-          <div class="details-content" v-html="cosmeticsItem.details.description"></div>
+        <div v-if="cosmeticsItem" class="details">
+          <h1 class="details-title">{{ cosmeticsItem.details[locale].title }}</h1>
+          <h2 class="details-line">{{ cosmeticsItem.details[locale].productLine }}</h2>
+          <img :src="cosmeticsItem.itemUrl" :alt="cosmeticsItem.details[locale].title" class="details-image" width="335" height="335">
+          <div class="details-content" v-html="cosmeticsItem.details[locale].description"></div>
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@
 
 <script>
   import { mapState, mapGetters } from 'vuex';
-  import Header from '../components/HeaderInner.vue';
+  import Header from '../components/HeaderLite.vue';
   import Footer from '../components/Footer.vue';
 
   export default {
@@ -31,7 +31,8 @@
     },
     computed: {
       ...mapGetters({
-        cosmeticsItem: 'cosmetics/item'
+        cosmeticsItem: 'cosmetics/item',
+        locale: 'locales/locale'
       }),
     },
   }
