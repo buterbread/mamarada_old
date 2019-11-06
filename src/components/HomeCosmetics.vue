@@ -9,11 +9,11 @@
 					</div>
 					<div class="kidsCosmetics-content">
 						<div class="kidsCosmetics-header">
-							<h3 class="kidsCosmetics-title">{{item.title}}</h3>
+							<h3 class="kidsCosmetics-title">{{item.info[locale].title}}</h3>
 							<span class="kidsCosmetics-price">₴{{item.price}}</span>
 						</div>
 						<div class="kidsCosmetics-description">
-							<p class="kidsCosmetics-descriptionPara">{{item.description}}</p>
+							<p class="kidsCosmetics-descriptionPara">{{item.info[locale].description}}</p>
 						</div>
 					</div>
 				</a>
@@ -37,7 +37,8 @@
 		},
 	  }),
       ...mapGetters({
-        cosmeticsList: 'cosmetics/list'
+        cosmeticsList: 'cosmetics/list',
+				locale: 'locales/locale'
       }),
 	},
   }
