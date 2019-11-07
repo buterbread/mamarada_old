@@ -1,4 +1,4 @@
-const cdnUrl  = 'http://mamarada.biz';
+const cdnUrl = 'http://mamarada.biz';
 
 const data = [
   {
