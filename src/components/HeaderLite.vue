@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'HeaderLite',
   methods: {
@@ -45,6 +47,11 @@ export default {
       this.$i18n.locale = locale;
       this.$store.dispatch('locales/setLocale', locale);
     }
+  },
+  computed: {
+    ...mapGetters({
+      locale: 'locales/locale'
+    }),
   },
   data() {
     return {}
