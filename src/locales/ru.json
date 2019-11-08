@@ -53,7 +53,7 @@
   },
 
   "HowToOrder.Title": "Как оформить заявку на выезд няни",
-  "HowToOrder.para1": "<a href='{phoneHref}'>позвонить</a> или написать нам <a href='{smsHref}'>SMS</a>, сообщение в <a href='{viberHref}'>вайбер</a> или <a href='{messengerHref}'>мессенджер</a>",
+  "HowToOrder.para1": "<a href='{phoneHref}'>позвонить</a> или написать нам <a href='{smsHref}'>SMS</a>",
   "HowToOrder.para2": "Уточнить возраст ребенка и ваш адрес",
   "HowToOrder.para3": "Назначить время, когда вам необходима помощь",
   "HowToOrder.para4": "Отдыхать :)",

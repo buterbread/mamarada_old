@@ -1,52 +1,55 @@
 <template>
-	<header class="header header--inner">
-		<div class="container">
-			<div class="headerWrapper">
-				<div class="header-top">
-					<a href="/" class="headerLogo">Мама Рада :)</a>
+  <header class="header header--inner">
+    <div class="container">
+      <div class="headerWrapper">
+        <div class="header-top">
+          <a href="/" class="headerLogo">Мама Рада :)</a>
 
-					<div>
-						<a href="#" v-on:click="(e) => changeLang(e, 'ua')">укр</a>
-						&nbsp;&nbsp;&nbsp;
-						<a href="#" v-on:click="(e) => changeLang(e, 'ru')">рус</a>
-					</div>
+          <ul class="langMenu">
+            <li class="langMenu-item">
+              <a href="#" :class="`langMenu-link ${locale === 'ua' ? 'isActive' : ''}`" v-on:click="(e) => changeLang(e, 'ua')">Укр</a>
+            </li>
+            <li class="langMenu-item">
+              <a href="#" :class="`langMenu-link ${locale === 'ru' ? 'isActive' : ''}`" v-on:click="(e) => changeLang(e, 'ru')">Рус</a>
+            </li>
+          </ul>
 
-					<template v-if="false">
-						<ul class="mediaLinks mediaLinks_header">
-							<li class="mediaLinks-item">
-								<a href="#" class="mediaLinks-link"><i class="icon icon-instagram"></i>Instagram</a>
-							</li>
-							<li class="mediaLinks-item">
-								<a href="#" class="mediaLinks-link"><i class="icon icon-facebook"></i>Facebook</a>
-							</li>
-						</ul>
+          <template v-if="false">
+            <ul class="mediaLinks mediaLinks_header">
+              <li class="mediaLinks-item">
+                <a href="#" class="mediaLinks-link"><i class="icon icon-instagram"></i>Instagram</a>
+              </li>
+              <li class="mediaLinks-item">
+                <a href="#" class="mediaLinks-link"><i class="icon icon-facebook"></i>Facebook</a>
+              </li>
+            </ul>
 
-						<a href="#" class="sandwichMenu">
-							<i class="sandwichMenu-bar"></i>
-							<i class="sandwichMenu-bar"></i>
-							<i class="sandwichMenu-bar"></i>
-						</a>
-					</template>
-				</div>
-			</div>
-		</div>
-	</header>
+            <a href="#" class="sandwichMenu">
+              <i class="sandwichMenu-bar"></i>
+              <i class="sandwichMenu-bar"></i>
+              <i class="sandwichMenu-bar"></i>
+            </a>
+          </template>
+        </div>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>
-	export default {
-		name: 'HeaderLite',
-		methods: {
-			changeLang(e, locale) {
-				e.preventDefault();
-				this.$i18n.locale = locale;
-				this.$store.dispatch('locales/setLocale', locale);
-			}
-		},
-		data() {
-			return {}
-		}
-	}
+export default {
+  name: 'HeaderLite',
+  methods: {
+    changeLang(e, locale) {
+      e.preventDefault();
+      this.$i18n.locale = locale;
+      this.$store.dispatch('locales/setLocale', locale);
+    }
+  },
+  data() {
+    return {}
+  }
+}
 </script>
 
 <style lang="scss">

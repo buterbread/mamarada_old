@@ -1,6 +1,6 @@
 function getInitialLocale() {
   if (window && window.localStorage) {
-    return window.localStorage.getItem('locale');
+    return window.localStorage.getItem('locale') || 'ua';
   }
 
   return 'ua';
