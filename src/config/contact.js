@@ -1,3 +1,7 @@
+import global from './global';
+
+const { SOCIAL_MEDIA_PHONE_1 } = global;
+
 const contact = (() => ({
   phones: [
     {
@@ -6,7 +10,11 @@ const contact = (() => ({
       phoneLabelLocal: '067 524 79 39',
       phoneNumber: '+380675247939',
     }
-  ]
+  ],
+  socialMedia: {
+    viberChatLink: `viber://chat?number=${SOCIAL_MEDIA_PHONE_1}`,
+    telegramChatLink: `tg://resolve?domain=${SOCIAL_MEDIA_PHONE_1}`
+  }
 }))();
 
 export default contact

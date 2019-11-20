@@ -52,7 +52,7 @@
   },
 
   "HowToOrder.Title": "Як оформити заявку на виїзд няні",
-  "HowToOrder.para1": "<a href='{phoneHref}'>подзвонити</a> або написати нам <a href='{smsHref}'>SMS</a>",
+  "HowToOrder.para1": "<a href='{phoneHref}'>подзвонити</a> або написати нам <a href='{smsHref}'>SMS</a>, повідомлення в <a href='{viberChatHref}'>вайбер</a> або <a href='{telegramChatHref}'>телеграм</a>",
   "HowToOrder.para2": "Уточнити вік дитини та ваша адресу",
   "HowToOrder.para3": "Призначити час коли вам необхідна допомога",
   "HowToOrder.para4": "Відпочівати :)",
