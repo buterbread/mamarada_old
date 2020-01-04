@@ -27,12 +27,12 @@
 
 <script>
 // @ is an alias to /src
-import Header from '../components/Header.vue';
-import Cosmetics from '../components/HomeCosmetics.vue';
-import PricesSection from '../components/PricesSection.vue';
-import HowToOrderSection from '../components/HowToOrderSection.vue';
-import WorkConditionsSection from '../components/WorkConditionsSection.vue';
-import Footer from '../components/Footer.vue';
+import Header from '../components/Header.vue'
+import Cosmetics from '../components/HomeCosmetics.vue'
+import PricesSection from '../components/PricesSection.vue'
+import HowToOrderSection from '../components/HowToOrderSection.vue'
+import WorkConditionsSection from '../components/WorkConditionsSection.vue'
+import Footer from '../components/Footer.vue'
 
 export default {
   name: 'home',
@@ -42,7 +42,7 @@ export default {
     PricesSection,
     HowToOrderSection,
     WorkConditionsSection,
-    Footer,
+    Footer
   }
 }
 </script>

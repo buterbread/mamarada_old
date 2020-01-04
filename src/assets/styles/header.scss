@@ -113,6 +113,23 @@
   background-image: url("../assets/icon--instagram.svg");
 }
 
+.icon-viber {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url("../assets/icon--viber--invert.svg") center no-repeat;
+  background-size: cover;
+}
+
+.icon-telegram {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url("../assets/icon--telegram--invert.svg") center no-repeat;
+  background-size: cover;
+}
+
+
 .sandwichMenu {
   display: flex;
   width: 30px;

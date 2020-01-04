@@ -13,19 +13,19 @@
 </template>
 
 <script>
-import contact from '../config/contact';
-const { phones, socialMedia } = contact;
-const { phoneLabel, phoneNumber } = phones[0] || {};
-const { viberChatLink, telegramChatLink } = socialMedia || {};
+import contact from '../config/contact'
+const { phones, socialMedia } = contact
+const { phoneLabel, phoneNumber } = phones[0] || {}
+const { viberChatLink, telegramChatLink } = socialMedia || {}
 
 export default {
   name: 'HowToOrderSection',
-  data() {
+  data () {
     return {
       phoneLabel,
       phoneNumber,
       viberChatLink,
-      telegramChatLink,
+      telegramChatLink
     }
   }
 }

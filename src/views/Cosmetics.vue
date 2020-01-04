@@ -16,26 +16,26 @@
 </template>
 
 <script>
-  import { mapState, mapGetters } from 'vuex';
-  import Header from '../components/HeaderLite.vue';
-  import Footer from '../components/Footer.vue';
+import { mapGetters } from 'vuex'
+import Header from '../components/HeaderLite.vue'
+import Footer from '../components/Footer.vue'
 
-  export default {
-    name: 'cosmeticsDetails',
-    components: {
-      Header,
-      Footer,
-    },
-    created() {
-      this.$store.dispatch('cosmetics/fetchItemData', this.$route.params.id);
-    },
-    computed: {
-      ...mapGetters({
-        cosmeticsItem: 'cosmetics/item',
-        locale: 'locales/locale'
-      }),
-    },
+export default {
+  name: 'cosmeticsDetails',
+  components: {
+    Header,
+    Footer
+  },
+  created () {
+    this.$store.dispatch('cosmetics/fetchItemData', this.$route.params.id)
+  },
+  computed: {
+    ...mapGetters({
+      cosmeticsItem: 'cosmetics/item',
+      locale: 'locales/locale'
+    })
   }
+}
 </script>
 
 <style lang="scss">

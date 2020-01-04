@@ -1,9 +1,8 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from './views/Home.vue';
-import Cosmetics from './views/Cosmetics.vue';
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   mode: 'history',
@@ -15,12 +14,12 @@ export default new Router({
       component: Home
     },
     {
-     path: '/cosmetics/:id',
-     name: 'Cosmetics',
-     // route level code-splitting
-     // this generates a separate chunk (about.[hash].js) for this route
-     // which is lazy-loaded when the route is visited.
-     component: () => import(/* webpackChunkName: "cosmetics" */ './views/Cosmetics.vue')
+      path: '/cosmetics/:id',
+      name: 'Cosmetics',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "cosmetics" */ './views/Cosmetics.vue')
     }
   ]
 })

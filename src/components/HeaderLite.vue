@@ -37,23 +37,23 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'HeaderLite',
   methods: {
-    changeLang(e, locale) {
-      e.preventDefault();
-      this.$i18n.locale = locale;
-      this.$store.dispatch('locales/setLocale', locale);
+    changeLang (e, locale) {
+      e.preventDefault()
+      this.$i18n.locale = locale
+      this.$store.dispatch('locales/setLocale', locale)
     }
   },
   computed: {
     ...mapGetters({
       locale: 'locales/locale'
-    }),
+    })
   },
-  data() {
+  data () {
     return {}
   }
 }

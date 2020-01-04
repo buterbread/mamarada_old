@@ -2,7 +2,7 @@
   <div>
     <h2 class="homeSection-title">{{ $t('KidsCosmetics') }}</h2>
     <ul class="kidsCosmetics">
-      <li v-for="item in cosmeticsList" class="kidsCosmetics-item">
+      <li v-for="item in cosmeticsList" :key="item.id" class="kidsCosmetics-item">
         <a :href="`/cosmetics/${item.id}`" class="kidsCosmetics-link">
           <div class="kidsCosmetics-imageBox">
             <img :src="item.previewUrl" :alt="item.title" class="kidsCosmetics-image" />
@@ -23,23 +23,23 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'Cosmetics',
-  created() {
-    this.$store.dispatch('cosmetics/fetchListData');
+  created () {
+    this.$store.dispatch('cosmetics/fetchListData')
   },
   computed: {
     ...mapState({
       cosmetics: state => {
         return state.cosmetics
-      },
+      }
     }),
     ...mapGetters({
       cosmeticsList: 'cosmetics/list',
       locale: 'locales/locale'
-    }),
-  },
+    })
+  }
 }
 </script>

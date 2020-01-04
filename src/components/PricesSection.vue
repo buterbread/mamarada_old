@@ -34,7 +34,11 @@
             </section>
           </div>
 
-          <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+          <div class="pricesBlock-buttonsBox">
+            <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+            <a :href=viberChatLink class="button pricesBlock-viberButton">Viber</a>
+            <a :href=telegramChatLink class="button pricesBlock-telegramButton">Telegram</a>
+          </div>
         </div>
 
         <div class="pricesBlock">
@@ -69,7 +73,11 @@
             </section>
           </div>
 
-          <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+          <div class="pricesBlock-buttonsBox">
+            <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+            <a :href=viberChatLink class="button pricesBlock-viberButton">Viber</a>
+            <a :href=telegramChatLink class="button pricesBlock-telegramButton">Telegram</a>
+          </div>
         </div>
 
         <div class="pricesBlock" id="nannyForFamily">
@@ -90,7 +98,11 @@
             </section>
           </div>
 
-          <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+          <div class="pricesBlock-buttonsBox">
+            <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+            <a :href=viberChatLink class="button pricesBlock-viberButton">Viber</a>
+            <a :href=telegramChatLink class="button pricesBlock-telegramButton">Telegram</a>
+          </div>
         </div>
 
         <div class="pricesBlock">
@@ -111,7 +123,11 @@
             </section>
           </div>
 
-          <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+          <div class="pricesBlock-buttonsBox">
+            <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+            <a :href=viberChatLink class="button pricesBlock-viberButton">Viber</a>
+            <a :href=telegramChatLink class="button pricesBlock-telegramButton">Telegram</a>
+          </div>
         </div>
 
         <div class="pricesBlock" id="autoDaddy">
@@ -133,7 +149,11 @@
             </section>
           </div>
 
-          <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+          <div class="pricesBlock-buttonsBox">
+            <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+            <a :href=viberChatLink class="button pricesBlock-viberButton">Viber</a>
+            <a :href=telegramChatLink class="button pricesBlock-telegramButton">Telegram</a>
+          </div>
         </div>
 
         <div class="pricesBlock" id="kidsWithIndividualNeeds">
@@ -144,7 +164,11 @@
             </span>
           </h2>
 
-          <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+          <div class="pricesBlock-buttonsBox">
+            <a :href=phoneHref class="button pricesBlock-orderButton">{{ $t('ToCall') }}</a>
+            <a :href=viberChatLink class="button pricesBlock-viberButton">Viber</a>
+            <a :href=telegramChatLink class="button pricesBlock-telegramButton">Telegram</a>
+          </div>
         </div>
       </div>
     </div>
@@ -152,15 +176,21 @@
 </template>
 
 <script>
-  export default {
-    name: 'PricesSection',
-    data() {
-      return {
-        phoneLabel: '067-524-79-39',
-        phoneHref: `tel:+380675247939`,
-      }
+import contact from '../config/contact'
+const { phones, socialMedia } = contact
+const { phoneNumber } = phones[0] || {}
+const { viberChatLink, telegramChatLink } = socialMedia || {}
+
+export default {
+  name: 'PricesSection',
+  data () {
+    return {
+      phoneHref: `tel:${phoneNumber}`,
+      viberChatLink,
+      telegramChatLink
     }
   }
+}
 </script>
 
 <style lang="scss">

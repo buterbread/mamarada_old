@@ -65,29 +65,29 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import contact from '../config/contact';
-const { phones } = contact;
-const { phoneLabel, phoneNumber } = phones[0] || {};
+import { mapGetters } from 'vuex'
+import contact from '../config/contact'
+const { phones } = contact
+const { phoneLabel, phoneNumber } = phones[0] || {}
 
 export default {
   name: 'Header',
   methods: {
-    changeLang(e, locale) {
-      e.preventDefault();
-      this.$i18n.locale = locale;
-      this.$store.dispatch('locales/setLocale', locale);
+    changeLang (e, locale) {
+      e.preventDefault()
+      this.$i18n.locale = locale
+      this.$store.dispatch('locales/setLocale', locale)
     }
   },
   computed: {
     ...mapGetters({
       locale: 'locales/locale'
-    }),
+    })
   },
-  data() {
+  data () {
     return {
       phoneLabel,
-      phoneNumber,
+      phoneNumber
     }
   }
 }

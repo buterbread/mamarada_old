@@ -1,36 +1,36 @@
-function getInitialLocale() {
+function getInitialLocale () {
   if (window && window.localStorage) {
-    return window.localStorage.getItem('locale') || 'ua';
+    return window.localStorage.getItem('locale') || 'ua'
   }
 
-  return 'ua';
+  return 'ua'
 }
 
 export default {
   namespaced: true,
 
   state: {
-    locale: getInitialLocale(),
+    locale: getInitialLocale()
   },
 
   mutations: {
-    SET_LOCALE(state, locale) {
-      state.locale = locale;
-    },
+    SET_LOCALE (state, locale) {
+      state.locale = locale
+    }
   },
 
   actions: {
-    setLocale(state, locale) {
-      const { commit } = state;
-      commit('SET_LOCALE', locale);
+    setLocale (state, locale) {
+      const { commit } = state
+      commit('SET_LOCALE', locale)
 
-      window.localStorage.setItem('locale', locale);
-    },
+      window.localStorage.setItem('locale', locale)
+    }
   },
 
   getters: {
-    locale(state) {
+    locale (state) {
       return state.locale
-    },
-  },
-};
+    }
+  }
+}
