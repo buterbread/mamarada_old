@@ -40,7 +40,7 @@
 
 <style lang="scss">
   .details {
-    color: #555;
+    color: #333;
   }
 
   .details-image {
@@ -62,7 +62,7 @@
   }
 
   .details-content {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.4;
 
     h3 {

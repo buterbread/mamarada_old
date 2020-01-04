@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="homeSection-title">Детская косметика</h2>
+    <h2 class="homeSection-title">{{ $t('KidsCosmetics') }}</h2>
     <ul class="kidsCosmetics">
       <li v-for="item in cosmeticsList" class="kidsCosmetics-item">
         <a :href="`/cosmetics/${item.id}`" class="kidsCosmetics-link">

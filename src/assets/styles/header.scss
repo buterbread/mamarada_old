@@ -39,25 +39,37 @@
 .langMenu {
   display: flex;
   padding: 0;
-  margin: 0 5px 0 0;
+  margin: 0 5px 0 auto;
   list-style-type: none;
 }
 
 .langMenu-item {
   display: block;
+  margin-left: -1px;
 
-  & + & {
-    margin-left: 15px;
+  &:first-child {
+    .langMenu-link {
+      border-radius: 9999px 0 0 9999px;
+    }
+  }
+
+  &:last-child {
+    .langMenu-link {
+      border-radius: 0 9999px 9999px 0;
+    }
   }
 }
 
 .langMenu-link {
+  display: block;
   color: #ffffff;
   text-decoration: none;
+  border: 1px solid #ffffff;
+  padding: 2px 15px;
 
   &.isActive {
-    opacity: 0.75;
-    text-decoration: underline;
+    background-color: #ffffff;
+    color: #888;
   }
 }
 

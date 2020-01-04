@@ -1,6 +1,6 @@
 import global from './global';
 
-const { SOCIAL_MEDIA_PHONE_1 } = global;
+const { SOCIAL_MEDIA_PHONE_1, SOCIAL_MEDIA_TGDOMAIN_1 } = global;
 
 const contact = (() => ({
   phones: [
@@ -13,7 +13,7 @@ const contact = (() => ({
   ],
   socialMedia: {
     viberChatLink: `viber://chat?number=${SOCIAL_MEDIA_PHONE_1}`,
-    telegramChatLink: `tg://resolve?domain=${SOCIAL_MEDIA_PHONE_1}`
+    telegramChatLink: `tg://resolve?domain=${SOCIAL_MEDIA_TGDOMAIN_1}`
   }
 }))();
 
